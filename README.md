@@ -25,8 +25,8 @@ To use this userscript, you'll need a userscript manager such as **[Tampermonkey
 - Search for the Avatar Key and copy it.
 - Share it on the compilation project for all to see!
 
- ![example1]([https://github.com/user-attachments/assets/c4e92b74-1b81-44de-8b84-8dcaeb282044])
- ![example2]([https://github.com/user-attachments/assets/2b3f02cb-2181-441f-be19-adc0397ff31b])
+ ![example1]([https://github.com/user-attachments/assets/3eed159f-9399-4e93-93af-0d04cc4b2ad8])
+ ![example2]([https://github.com/user-attachments/assets/79732aee-ca31-487f-b1e1-ebf6342b54f9])
 
 ## Compatibility
 This userscript is compatible with the following browsers:
