@@ -8,7 +8,14 @@
 // @grant        none
 // ==/UserScript==
 
-(function () {
+function inject(fn) {
+    const script = document.createElement('script');
+    script.textContent = '(' + fn.toString() + ')();';
+    document.documentElement.appendChild(script);
+    script.remove();
+}
+
+inject(function () {
     console.log("Netflix Avatar Finder script loaded.");
 
     document.addEventListener('DOMContentLoaded', () => {
