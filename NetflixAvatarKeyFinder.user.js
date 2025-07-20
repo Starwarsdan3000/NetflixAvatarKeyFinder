@@ -55,26 +55,31 @@
 
     async function findAvatarAndModify() {
         const pageHTML = document.documentElement.innerHTML.trim(); // Get full HTML content
-        const searchPhrase = window.location.pathname.split('/')[4]; // Extract profile ID from the URL
+        const name = document.querySelector('input[name="profile-name"]').value; // Extract profile ID from the URL
 
-        console.log("Searching for profile ID:", searchPhrase);
+        console.log("Searching for profile name:", searchPhrase);
 
-        // Initialize regex to find all occurrences of profile ID
-        const regex = new RegExp(searchPhrase, 'g'); // Global match for all occurrences
-        const matches = [...pageHTML.matchAll(regex)]; // Get all matches
+        if (searchPhrase.includes(' ');) {
+            const searchPhrase2 = myString.replaceAll(' ', '\x20'); // uses string
+            const regex2 = new RegExp(searchPhrase2, 'g');
+            const matches = [...pageHTML.matchAll(regex2)];
+        } else {
+            const regex1 = new RegExp(searchPhrase1, 'g'); // always exists
+            const matches = [...pageHTML.matchAll(regex1)];
+        }
 
         console.log(matches);
-        // Get the position of the 9th occurrence
-        const ninthOccurrence = matches[6]; // 0-based index, so the 9th match is at index 8
-        const position = ninthOccurrence.index;
+        // Get the position of the occurrence
+        const occurrenceIndex = matches[matches.length - 1];
+        const position = occurrenceIndex.index;
 
-        console.log("9th occurrence found at position:", position);
+        console.log("Occurrence found at position:", position);
 
-        // Now search backwards for the word "AVATAR" just before the 9th occurrence of the profile ID
-        const avatarPosition = pageHTML.lastIndexOf('AVATAR', position); // Find "AVATAR" before the profile ID
+        // Now search backwards for the word "AVATAR" just before the occurrence of the profile name
+        const avatarPosition = pageHTML.lastIndexOf('AVATAR', position); // Find "AVATAR" before the profile name
 
         if (avatarPosition === -1) {
-            console.log('Could not find "AVATAR" before the profile ID.');
+            console.log('Could not find "AVATAR" before the profile name.');
             return;
         }
 
