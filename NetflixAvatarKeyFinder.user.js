@@ -60,16 +60,11 @@
         console.log("Searching for profile ID:", searchPhrase);
 
         // Initialize regex to find all occurrences of profile ID
-        const regex = new RegExp(searchPhrase, 'g');  // Global match for all occurrences
-        const matches = [...pageHTML.matchAll(regex)];  // Get all matches
-
-        if (matches.length < 9) {
-            console.log(`The 9th occurrence of the profile ID "${searchPhrase}" was not found.`);
-            return;
-        }
+        const regex = new RegExp(searchPhrase, 'g'); // Global match for all occurrences
+        const matches = [...pageHTML.matchAll(regex)]; // Get all matches
 
         // Get the position of the 9th occurrence
-        const ninthOccurrence = matches[6]; // 0-based index, so the 9th match is at index 8
+        const ninthOccurrence = matches[5]; // 0-based index, so the 9th match is at index 8
         const position = ninthOccurrence.index;
 
         console.log("9th occurrence found at position:", position);
