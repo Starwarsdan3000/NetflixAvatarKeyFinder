@@ -54,7 +54,7 @@
     document.body.appendChild(container);
 
     async function findAvatarAndModify() {
-        const pageHTML = document.body.innerHTML.trim(); // Get full HTML content
+        const pageHTML = document.documentElement.innerHTML.trim(); // Get full HTML content
         const searchPhrase = window.location.pathname.split('/')[4]; // Extract profile ID from the URL
 
         console.log("Searching for profile ID:", searchPhrase);
@@ -63,8 +63,9 @@
         const regex = new RegExp(searchPhrase, 'g'); // Global match for all occurrences
         const matches = [...pageHTML.matchAll(regex)]; // Get all matches
 
+        console.log(matches);
         // Get the position of the 9th occurrence
-        const ninthOccurrence = matches[5]; // 0-based index, so the 9th match is at index 8
+        const ninthOccurrence = matches[6]; // 0-based index, so the 9th match is at index 8
         const position = ninthOccurrence.index;
 
         console.log("9th occurrence found at position:", position);
