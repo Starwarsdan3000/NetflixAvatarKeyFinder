@@ -61,12 +61,17 @@
 
         let matches = [];
         if (searchPhrase.includes(' ')) {
-            const searchPhrase = searchPhrase.replaceAll(' ', '\x20'); // uses string
-            const regex = new RegExp(searchPhrase, 'g');
-            const matches = [...pageHTML.matchAll(regex)];
+            const inputPhrase = searchPhrase.replaceAll(/ /g, '\\\\x20'); // uses string
+            console.log(inputPhrase);
+            console.log(pageHTML.includes("Logan\\x20B"));
+            const regex = new RegExp(inputPhrase, 'g');
+            console.log(regex);
+            console.log("regex source:", regex.source);
+            matches = [...pageHTML.matchAll(regex)];
         } else {
             const regex = new RegExp(searchPhrase, 'g'); // always exists
-            const matches = [...pageHTML.matchAll(regex)];
+            console.log(regex);
+            matches = [...pageHTML.matchAll(regex)];
         }
 
         console.log(matches);
