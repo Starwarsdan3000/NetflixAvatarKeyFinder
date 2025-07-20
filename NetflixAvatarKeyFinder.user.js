@@ -55,17 +55,18 @@
 
     async function findAvatarAndModify() {
         const pageHTML = document.documentElement.innerHTML.trim(); // Get full HTML content
-        const name = document.querySelector('input[name="profile-name"]').value; // Extract profile ID from the URL
+        const searchPhrase = document.querySelector('input[name="profile-name"]').value; // Extract profile ID from the URL
 
         console.log("Searching for profile name:", searchPhrase);
 
-        if (searchPhrase.includes(' ');) {
-            const searchPhrase2 = myString.replaceAll(' ', '\x20'); // uses string
-            const regex2 = new RegExp(searchPhrase2, 'g');
-            const matches = [...pageHTML.matchAll(regex2)];
+        let matches = [];
+        if (searchPhrase.includes(' ')) {
+            const searchPhrase = searchPhrase.replaceAll(' ', '\x20'); // uses string
+            const regex = new RegExp(searchPhrase, 'g');
+            const matches = [...pageHTML.matchAll(regex)];
         } else {
-            const regex1 = new RegExp(searchPhrase1, 'g'); // always exists
-            const matches = [...pageHTML.matchAll(regex1)];
+            const regex = new RegExp(searchPhrase, 'g'); // always exists
+            const matches = [...pageHTML.matchAll(regex)];
         }
 
         console.log(matches);
