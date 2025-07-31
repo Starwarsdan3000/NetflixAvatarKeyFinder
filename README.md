@@ -23,6 +23,7 @@ To use this userscript, you'll need a userscript manager such as **[Tampermonkey
 ## Usage
 - Open the Netflix profile editor page.
 - Search for the Avatar Key and copy it.
+- **DONT CHANGE THE NAME IN THE NAME INPUT** it doesnt work otherwise
 - Share it on the compilation project for all to see!
 
  ![example1](https://github.com/user-attachments/assets/3eed159f-9399-4e93-93af-0d04cc4b2ad8)
