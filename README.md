@@ -42,3 +42,6 @@ If you encounter issues, try the following steps:
 3. Check for any errors in the browser's **Developer Tools Console**.
 4. DM me on discord I have nothing going on in my life
 
+## For all who help!
+Thank you so much! Its geniunly overbearing trying to get people to help compile this whole thing, and you're all the best for doing it!
+
